@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap');
+
+:root {
+  /* ── Brand palette ── */
+  --color-brand-deep:       #0C447C;
+  --color-brand-primary:    #185FA5;
+  --color-brand-accent:     #85B7EB;
+  --color-brand-light:      #E6F1FB;
+
+  /* ── Neutrals ── */
+  --color-text-primary:     #2C2C2A;
+  --color-text-secondary:   #888780;
+  --color-border:           #D3D1C7;
+  --color-bg-page:          #F1EFE8;
+  --color-bg-card:          #FFFFFF;
+
+  /* ── Semantics (medical data) ── */
+  --color-allergy:          #E24B4A;
+  --color-allergy-light:    #FCEBEB;
+  --color-chronic:          #EF9F27;
+  --color-chronic-light:    #FAEEDA;
+  --color-ok:               #639922;
+  --color-ok-light:         #EAF3DE;
+  --color-meds:             #534AB7;
+  --color-meds-light:       #EEEDFE;
+  
+  /* ── Typography (legacy kept for module usage just in case, will move to new vars) ── */
+  --font-title: 'Barlow Condensed', sans-serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+  
+  /* ── Radii ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+@media print {
+  body { background: var(--color-bg-card) !important; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+}
+
+/* Badge System */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badge-allergy {
+  background: var(--color-allergy-light);
+  color: #A32D2D;
+}
+.badge-allergy .badge-dot { background: var(--color-allergy); }
+
+.badge-chronic {
+  background: var(--color-chronic-light);
+  color: #854F0B;
+}
+.badge-chronic .badge-dot { background: var(--color-chronic); }
+
+.badge-ok {
+  background: var(--color-ok-light);
+  color: #3B6D11;
+}
+.badge-ok .badge-dot { background: var(--color-ok); }
+
+.badge-meds {
+  background: var(--color-meds-light);
+  color: #3C3489;
+}
+.badge-meds .badge-dot { background: var(--color-meds); }

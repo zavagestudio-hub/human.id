@@ -1,0 +1,1005 @@
+/* ── Base page ───────────────────────────────── */
+.page {
+  min-height: 100vh;
+  background: var(--color-bg-page);
+}
+
+/* ── Header ──────────────────────────────────── */
+.header {
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.logoAccent { color: var(--color-brand-deep); }
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--color-bg-page);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tabActive {
+  background: var(--color-bg-card);
+  color: var(--color-brand-deep);
+  box-shadow: 0 1px 4px rgba(22,105,122,0.1);
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btnOutline {
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.btnOutline:hover { border-color: var(--color-brand-primary); }
+
+.btnPrimary {
+  background: var(--color-brand-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover { background: var(--color-brand-deep); }
+
+/* ── Layout ───────────────────────────────────── */
+.main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tabContent { width: 100%; }
+
+/* ── Hero banner — brand-dark ──────────────────── */
+.heroBanner {
+  background: linear-gradient(135deg, #0C447C 0%, var(--color-brand-deep) 50%, #2980a0 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: 120px;
+  width: 180px;
+  height: 180px;
+  background: rgba(130, 192, 204, 0.12);
+  border-radius: 50%;
+}
+
+.heroLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+
+.heroAvatarWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.heroAvatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.4);
+}
+
+.donorBadge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: var(--color-bg-card);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.heroName {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-bg-card);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.heroMeta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.72);
+}
+
+.heroNationality {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 3px;
+}
+
+.heroRunner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.runnerBadge {
+  background: rgba(255,255,255,0.2);
+  color: var(--color-bg-card);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.disciplineBadge {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.bloodPanel {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bloodPanelLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 5px;
+}
+
+.bloodPanelBadge {
+  background: var(--color-bg-card);
+  color: var(--color-allergy);
+  font-family: var(--font-title);
+  font-size: 34px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  min-width: 78px;
+  line-height: 1;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.bloodPanelSub {
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Emergency strip — amber warning ──────────── */
+.emergencyStrip {
+  background: var(--color-chronic-light);
+  border: 1px solid var(--color-chronic);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emergencyStripIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.emergencyStripInfo { flex: 1; }
+
+.emergencyStripLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #7c4900;
+}
+
+.emergencyStripName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5a3300;
+  margin-top: 1px;
+}
+
+.emergencyStripPhone {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-brand-deep);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.emergencyStripPhone:hover { text-decoration: underline; }
+
+/* ── Alert box ────────────────────────────────── */
+.alertBox {
+  background: var(--color-allergy-light);
+  border: 1px solid #f5a8a7;
+  border-left: 4px solid var(--color-allergy);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.alertBoxIcon { font-size: 20px; flex-shrink: 0; }
+
+.alertBoxTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-allergy);
+  margin-bottom: 5px;
+}
+
+.alertBoxText {
+  font-size: 13px;
+  color: #7c1d1d;
+  line-height: 1.6;
+}
+
+/* ── Grid of sections ─────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+/* ── Section card ─────────────────────────────── */
+.section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.sectionBody { padding: 14px 16px; }
+
+/* ── Allergy list — severity from brand palette ── */
+.allergyList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.allergyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.allergyName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.severityBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Medical severity using the alert palette */
+.severLeve       { background: var(--color-ok-light);      color: var(--color-ok); }
+.severModerada   { background: var(--color-chronic-light);  color: #7c4900; }
+.severSevera     { background: var(--color-allergy-light);   color: #A32D2D; }
+.severAnafilaxis { background: var(--color-allergy);         color: var(--color-bg-card); }
+
+/* ── Medications ──────────────────────────────── */
+.medItem {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-bg-page);
+}
+
+.medItem:last-child { border-bottom: none; }
+
+.medName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.medDetail {
+  font-size: 12px;
+  color: var(--color-text-primary-muted);
+  margin-top: 2px;
+}
+
+/* ── Pills ────────────────────────────────────── */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.pillPurple {
+  background: var(--color-brand-primary-light);
+  color: var(--color-brand-deep);
+}
+
+/* ── Paramedic grid ───────────────────────────── */
+.paraGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.paraItem {
+  background: var(--color-bg-page);
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.paraItemFull { grid-column: 1 / -1; }
+
+.paraIcon { font-size: 16px; }
+
+.paraLabel {
+  font-size: 11px;
+  color: var(--color-text-primary-muted);
+  flex: 1;
+}
+
+.paraVal {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.insurancePhone {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-text-primary-muted);
+}
+
+.insurancePhone a {
+  color: var(--color-brand-deep);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ── Contact list ─────────────────────────────── */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactItem {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-bg-page);
+}
+
+.contactItem:last-child { border-bottom: none; }
+
+.contactRole {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-text-primary-muted);
+  margin-bottom: 3px;
+}
+
+.contactName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.contactClinic {
+  font-size: 12px;
+  color: var(--color-text-primary-muted);
+  margin-top: 1px;
+}
+
+.contactPhone {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-brand-deep);
+  margin-top: 3px;
+  text-decoration: none;
+}
+
+.contactPhone:hover { text-decoration: underline; }
+
+/* ── History ──────────────────────────────────── */
+.histGroup { margin-bottom: 12px; }
+.histGroup:last-child { margin-bottom: 0; }
+
+.histGroupTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-text-primary-muted);
+  margin-bottom: 6px;
+}
+
+.histItem {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  padding: 3px 0;
+}
+
+.histDot { color: var(--color-text-primary-muted); }
+
+.histYear {
+  font-size: 11px;
+  color: var(--color-text-primary-muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.vaccineGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vaccineItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--color-text-primary-muted);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* OK vaccine uses alert-ok green */
+.vaccineOk {
+  color: var(--color-text-primary);
+  background: var(--color-ok-light);
+}
+
+.vaccineCheck {
+  font-size: 12px;
+  color: var(--color-ok);
+  font-weight: 700;
+  width: 14px;
+}
+
+.vaccineName { flex: 1; }
+
+.vaccineYear {
+  font-size: 11px;
+  color: var(--color-text-primary-muted);
+}
+
+/* ── Runner section ───────────────────────────── */
+.runnerSection {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.runnerAvatarLarge { flex-shrink: 0; }
+
+.runnerAvatarImg {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.runnerDetails { flex: 1; }
+
+.runnerClub {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.runnerDisciplines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.disciplineTag {
+  background: var(--color-brand-deep-light);
+  color: var(--color-brand-deep);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.runnerEventsLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-text-primary-muted);
+  margin-bottom: 6px;
+}
+
+.runnerEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eventItem {
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+/* ── Notes ────────────────────────────────────── */
+.notesText {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  background: var(--color-bg-page);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── QR section ───────────────────────────────── */
+.qrSection {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.qrBox {
+  display: inline-block;
+  padding: 10px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.qrInfo { flex: 1; }
+
+.qrLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.qrUrl {
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: var(--color-brand-deep);
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.qrSub {
+  font-size: 12px;
+  color: var(--color-text-primary-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ── Footer ───────────────────────────────────── */
+.footer {
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-text-primary-muted);
+  padding-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════
+   PHYSICAL CARD — CR-80 (85.6 × 54 mm)
+   ═══════════════════════════════════════════════ */
+.cardWrap { width: 100%; }
+
+.cardLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cardLabelIcon { font-size: 16px; }
+
+.crCards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.crFront,
+.crBack {
+  width: 323px;
+  height: 204px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(12, 68, 124, 0.2), 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+/* ── Card Front — brand-dark gradient ── */
+.crFront {
+  background: linear-gradient(135deg, #0d3d47 0%, var(--color-brand-deep) 55%, var(--color-brand-primary) 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 8px;
+  color: var(--color-bg-card);
+}
+
+.crFrontTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crAvatar { flex-shrink: 0; }
+
+.crAvatarImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.crName {
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-bg-card);
+}
+
+.crMeta {
+  font-size: 9px;
+  color: rgba(255,255,255,0.65);
+  margin-top: 2px;
+}
+
+.crMiddle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.crBloodWrap { text-align: center; flex-shrink: 0; }
+
+.crBloodLabel {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 3px;
+}
+
+.crBloodBadge {
+  background: var(--color-bg-card);
+  color: var(--color-allergy);
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1;
+  min-width: 48px;
+  text-align: center;
+}
+
+.crInfoGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.crInfoItem {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.crInfoLabel {
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+
+.crInfoVal {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-bg-card);
+  margin-top: 1px;
+}
+
+.crBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.crQrWrap {
+  background: var(--color-bg-card);
+  padding: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.crUrlWrap { flex: 1; }
+
+.crUrlLabel {
+  font-size: 7px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.crUrlVal {
+  font-family: var(--font-title);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-bg-card);
+  letter-spacing: 0.5px;
+}
+
+.crLogo {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 1px;
+}
+
+/* ── Card Back — dark navy ── */
+.crBack {
+  background: linear-gradient(160deg, #0d3d47 0%, #1a1a1a 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  color: var(--color-bg-card);
+}
+
+.crBackHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.crBackLogo {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-bg-card);
+}
+
+.crBackLogoAccent {
+  color: var(--color-brand-accent);
+}
+
+.crBackTagline {
+  font-size: 8px;
+  color: rgba(255,255,255,0.4);
+  margin-left: auto;
+  letter-spacing: 0.5px;
+}
+
+.crBackBody {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  align-content: start;
+}
+
+.crBackItem {
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 5px 7px;
+}
+
+.crBackLabel {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.crBackVal {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--color-bg-card);
+  line-height: 1.3;
+}
+
+.crBackFull { grid-column: 1 / -1; }
+
+.crBackFooter {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crBackEmergency {
+  font-size: 8px;
+  color: rgba(255,255,255,0.45);
+}
+
+.crBackEmergencyNum {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-brand-accent);
+  display: block;
+  margin-top: 1px;
+}
+
+.crNfcBadge {
+  background: rgba(130, 192, 204, 0.2);
+  color: var(--color-brand-accent);
+  font-size: 8px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+   ═══════════════════════════════════════════════ */
+@media print {
+  .header, .footer, .qrSection, .tabs,
+  .headerActions, .btnOutline, .btnPrimary { display: none !important; }
+
+  .page, .main { background: var(--color-bg-card) !important; }
+
+  .heroBanner {
+    background: var(--color-bg-card) !important;
+    border: 2px solid #333 !important;
+  }
+
+  .heroName, .heroMeta, .heroNationality { color: #000 !important; }
+  .bloodPanelBadge { color: var(--color-allergy) !important; border: 2px solid var(--color-allergy); }
+
+  .crCards { flex-wrap: nowrap; gap: 0.5cm; }
+}
