@@ -2,74 +2,59 @@ export interface EmergencyContact {
   name: string
   phone: string
   relationship: string
-  secondary?: boolean
-}
-
-export interface Medication {
-  name: string
-  dose: string
-  frequency: string
-}
-
-export interface Allergy {
-  name: string
-  severity: 'leve' | 'moderada' | 'severa' | 'anafilaxis'
-}
-
-export interface Surgery {
-  description: string
-  year: number
-}
-
-export interface Vaccine {
-  name: string
-  year?: number
-  upToDate?: boolean
-}
-
-export interface InsuranceInfo {
-  provider: string
-  policyNumber: string
-  phone?: string
-}
-
-export interface RunnerInfo {
-  discipline: string[]
-  events: string[]
-  club?: string
 }
 
 export interface HumanProfile {
   id: string
-  slug: string
+
+  // Personal
   name: string
+  photo?: string           // URL opcional de foto
   age: number | null
   sex: string
-  weight: number | null
-  height?: number | null
-  nationality?: string
-  language?: string
+  weight: number | null    // kg
+  height: number | null    // cm
+  nationality: string
+
+  // Médico crítico
   bloodType: string
-  allergies: Allergy[]
-  medications: Medication[]
-  conditions: string[]
-  disabilities?: string[]
-  emergencyContact: EmergencyContact
-  emergencyContactSecondary?: EmergencyContact
-  doctor?: {
+  allergies: Array<{
     name: string
-    clinic: string
+    severity: 'leve' | 'moderada' | 'severa' | 'anafilaxis'
+  }>
+  medications: Array<{
+    name: string
+    dose: string
+    frequency: string
+  }>
+  conditions: string[]
+  disabilities: string[]
+
+  // Historial
+  surgeries: Array<{ description: string; year: number }>
+  vaccines: string[]
+
+  // Contactos
+  emergencyContacts: EmergencyContact[]   // mínimo 1, máximo 3
+  doctor: {
+    name: string
     phone: string
+    clinic: string
   }
-  surgeries?: Surgery[]
-  hospitalizations?: string[]
-  vaccines?: Vaccine[]
-  hasPacemaker?: boolean
-  hasProsthesis?: boolean
-  organDonor?: boolean
-  emergencyInstructions?: string
-  insurance?: InsuranceInfo
-  runner?: RunnerInfo
-  notes: string
+
+  // Paramédico
+  hasPacemaker: boolean
+  hasProsthetics: boolean
+  organDonor: boolean
+  specialInstructions: string
+  insurance: {
+    company: string
+    policyNumber: string
+  }
+
+  // Runner identity
+  discipline: string          // ej. "Trail running", "Asfalto", "Triatlón"
+  regularEvents: string[]     // ej. ["Maratón CDMX", "Ultra Caballo Blanco"]
+
   createdAt: string
 }

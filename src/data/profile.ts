@@ -7,93 +7,79 @@ import { HumanProfile } from '@/types'
 
 const profile: HumanProfile = {
   id: 'demo-runner-01',
-  slug: 'carlos-mendoza',
   name: 'Carlos Mendoza Ríos',
+  photo: '/avatar-demo.png',
   age: 34,
   sex: 'Masculino',
   weight: 72,
   height: 178,
   nationality: 'Mexicano',
-  language: 'Español',
 
   bloodType: 'A+',
 
   allergies: [
-    { name: 'Penicilina', severity: 'anafilaxis' },
-    { name: 'Ibuprofeno', severity: 'severa' },
-    { name: 'Látex', severity: 'moderada' },
-    { name: 'Polen', severity: 'leve' },
+    { name: 'Penicilina', severity: 'severa' },
+    { name: 'Aspirina (AAS)', severity: 'moderada' },
+    { name: 'Látex', severity: 'leve' },
   ],
 
   medications: [
     { name: 'Losartán', dose: '50 mg', frequency: 'Una vez al día (mañana)' },
     { name: 'Omeprazol', dose: '20 mg', frequency: 'En ayunas' },
-    { name: 'Atorvastatina', dose: '10 mg', frequency: 'Una vez al día (noche)' },
+    { name: 'Salbutamol (inhalador)', dose: '100 mcg / 2 puff', frequency: 'Al inicio de síntomas respiratorios' },
   ],
 
   conditions: [
-    'Hipertensión arterial (controlada)',
-    'Hipotiroidismo leve',
+    'Hipertensión arterial leve (controlada)',
     'Asma de esfuerzo (leve)',
+    'Hipotiroidismo leve (compensado)',
   ],
 
   disabilities: [],
 
-  emergencyContact: {
-    name: 'Ana Lucía Ríos',
-    phone: '+52 228 159 4723',
-    relationship: 'Esposa',
-  },
-
-  emergencyContactSecondary: {
-    name: 'Roberto Mendoza',
-    phone: '+52 55 3312 9080',
-    relationship: 'Hermano',
-  },
-
-  doctor: {
-    name: 'Dr. Javier Herrera Blanco',
-    clinic: 'Clínica MedVida — Xalapa, Ver.',
-    phone: '+52 228 812 4400',
-  },
-
   surgeries: [
-    { description: 'Apendicectomía laparoscópica', year: 2018 },
-    { description: 'Artroscopia rodilla derecha (menisco)', year: 2022 },
-  ],
-
-  hospitalizations: [
-    'Hospitalización por neumonía — Enero 2020 (3 días)',
+    { description: 'Meniscectomía parcial rodilla derecha', year: 2019 },
+    { description: 'Apendicectomía laparoscópica', year: 2015 },
   ],
 
   vaccines: [
-    { name: 'COVID-19 (Pfizer)', year: 2021, upToDate: true },
-    { name: 'Tétanos / Td', year: 2023, upToDate: true },
-    { name: 'Influenza', year: 2025, upToDate: true },
-    { name: 'Hepatitis B', year: 2019, upToDate: true },
+    'Tétanos / Td — 2023',
+    'COVID-19 Pfizer — 2021',
+    'Hepatitis B — 2019',
+    'Influenza — 2025',
   ],
 
+  emergencyContacts: [
+    { name: 'Ana Lucía Ríos', phone: '+52 228 159 4723', relationship: 'Esposa' },
+    { name: 'Roberto Mendoza', phone: '+52 55 3312 9080', relationship: 'Hermano' },
+  ],
+
+  doctor: {
+    name: 'Dr. Javier Herrera Blanco',
+    clinic: 'Clínica MedVida — CDMX, Del. Benito Juárez',
+    phone: '+52 55 5280 4400',
+  },
+
   hasPacemaker: false,
-  hasProsthesis: false,
+  hasProsthetics: false,
   organDonor: true,
 
-  emergencyInstructions:
-    'En caso de reacción anafiláctica por penicilina, usar EpiPen (bolsa de trail). No administrar AINEs. Paciente hipertenso: monitorear presión. Si inconsciente, posición de recuperación.',
+  specialInstructions:
+    'Paciente hipertenso controlado con Losartán. Monitorear presión arterial en emergencias. NO administrar AINEs (alérgico a Aspirina). NO administrar Penicilina ni derivados. Asmático de esfuerzo: lleva inhalador Salbutamol en cinturón de hidratación. En dificultad respiratoria post-ejercicio: 2 puff y reposo.',
 
   insurance: {
-    provider: 'GNP Seguros',
+    company: 'GNP Seguros',
     policyNumber: 'GNP-4521-MX-00839',
-    phone: '800 400 9000',
   },
 
-  runner: {
-    discipline: ['Trail Running', 'Asfalto 10K–Media Maratón'],
-    events: ['Ultra Trail Pico de Orizaba', 'Maratón CDMX', 'Carrera Veracruz 21K'],
-    club: 'Trail Runners Veracruz',
-  },
+  discipline: 'Trail Running',
 
-  notes:
-    'Lleva EpiPen en cinturón deportivo azul. Asmático de esfuerzo: en situación de dificultad respiratoria post-ejercicio, puede usar inhalador salbutamol (mochila). Diestro. Sin restricción para donación de sangre.',
+  regularEvents: [
+    'Maratón de la Ciudad de México',
+    'Ultra Caballo Blanco (Copper Canyon)',
+    'Carrera Veracruz 21K',
+    'Trail Pico de Orizaba',
+  ],
 
   createdAt: '2026-01-15T09:00:00.000Z',
 }
