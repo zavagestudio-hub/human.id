@@ -43,7 +43,7 @@ export async function POST(request: Request) {
 
       // Activate subscription row
       if (subscriptionId) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  
         const stripeSub = await stripe.subscriptions.retrieve(subscriptionId) as any
         await db.from('subscriptions').update({
           stripe_subscription_id: subscriptionId,
@@ -82,12 +82,12 @@ export async function POST(request: Request) {
     }
 
     case 'invoice.paid': {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       const invoice = event.data.object as any
       const customerId = invoice.customer as string
       const subscriptionId = invoice.subscription ?? invoice.parent?.subscription_details?.subscription
       if (!subscriptionId) break
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       const stripeSub = await stripe.subscriptions.retrieve(subscriptionId) as any
       await db.from('subscriptions').update({
         status: 'active',
