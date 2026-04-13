@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { stripe } from '@/lib/stripe/client'
 import { ADD_ON_PRICE_MAP, type AddOnType } from '@/lib/stripe/products'
+
+export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {

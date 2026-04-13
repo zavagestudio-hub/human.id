@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { stripe } from '@/lib/stripe/client'
+
+export const dynamic = 'force-dynamic'
 import { ANUALIDAD_PRICE_ID, ADD_ON_PRICE_MAP, type AddOnType } from '@/lib/stripe/products'
 import { generateSlug } from '@/lib/utils'
 import { NextResponse } from 'next/server'
