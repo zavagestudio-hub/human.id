@@ -1,0 +1,161 @@
+.section {
+  background: var(--color-brand-light);
+  padding: 5rem 1.5rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+}
+
+.timeline {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.phaseWrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0;
+  min-width: 0;
+}
+
+.phase {
+  flex: 1;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.75rem 1.25rem;
+  min-width: 0;
+}
+
+.done {
+  border-color: var(--color-brand-primary);
+  background: var(--color-bg-card);
+}
+
+.soon {
+  opacity: 0.7;
+}
+
+.dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.875rem;
+  margin-bottom: 0.875rem;
+}
+
+.done .dot {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.soon .dot {
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.phaseLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brand-primary);
+  margin-bottom: 0.5rem;
+}
+
+.soon .phaseLabel {
+  color: var(--color-text-secondary);
+}
+
+.phaseTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.375rem;
+  line-height: 1.4;
+}
+
+.phaseDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+.connector {
+  width: 2.5rem;
+  flex-shrink: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-brand-accent), var(--color-border));
+  position: relative;
+  align-self: center;
+  margin-bottom: 0.5rem;
+}
+
+.connector::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .phaseWrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connector {
+    width: 2px;
+    height: 1.5rem;
+    background: linear-gradient(to bottom, var(--color-brand-accent), var(--color-border));
+    margin: 0 auto;
+  }
+
+  .connector::after {
+    right: 50%;
+    top: auto;
+    bottom: -1px;
+    transform: translateX(50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--color-border);
+    border-bottom: none;
+  }
+}
