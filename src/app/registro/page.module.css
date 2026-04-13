@@ -1,0 +1,609 @@
+/* ─── Layout ─────────────────────────────────────────────────── */
+.wrap {
+  min-height: 100vh;
+  background: var(--color-bg-page);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.5rem;
+  gap: 1rem;
+}
+
+.headerStep {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-brand-primary);
+  flex: 1;
+  text-align: center;
+}
+
+.headerCounter {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ─── Progress bar ───────────────────────────────────────────── */
+.progressTrack {
+  height: 3px;
+  background: var(--color-border);
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-brand-primary);
+  transition: width 0.35s ease;
+}
+
+/* ─── Step pills ─────────────────────────────────────────────── */
+.pills {
+  display: flex;
+  gap: 0;
+  padding: 1.25rem 1.5rem 0;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pills::-webkit-scrollbar { display: none; }
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.pill:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: var(--color-border);
+  margin: 0 0.375rem;
+}
+
+.pillNum {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.pillLabel {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+.pillActive .pillNum {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+.pillActive .pillLabel {
+  display: block;
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+.pillDone .pillNum {
+  background: var(--color-ok);
+  color: #fff;
+}
+
+/* ─── Main / Card ────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1.75rem 1.5rem 3rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2.5rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.cardTitle {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Field layout ───────────────────────────────────────────── */
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+
+.full {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ─── Labels ─────────────────────────────────────────────────── */
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.labelSm {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.labelNote {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.req {
+  color: var(--color-allergy);
+  margin-left: 2px;
+}
+
+.unit {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  background: var(--color-brand-light);
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 0.875rem;
+}
+
+.empty {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  padding: 0.25rem 0;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────────── */
+.input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: var(--color-bg-card);
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.1);
+}
+
+.input::placeholder {
+  color: #bbb;
+}
+
+.select {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: var(--color-bg-card);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.25rem;
+}
+
+.select:focus {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.1);
+}
+
+.selectSm {
+  width: auto;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background: var(--color-bg-card);
+  resize: vertical;
+  outline: none;
+  line-height: 1.6;
+  transition: border-color 0.15s;
+}
+
+.textarea:focus {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.1);
+}
+
+.textarea::placeholder { color: #bbb; }
+
+/* ─── Blood type selector ────────────────────────────────────── */
+.bloodGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bloodBtn {
+  padding: 0.5rem 1.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  transition: all 0.15s;
+}
+
+.bloodBtn:hover {
+  border-color: var(--color-brand-primary);
+  background: var(--color-brand-light);
+}
+
+.bloodBtnActive {
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: #fff;
+}
+
+/* ─── Dynamic list ───────────────────────────────────────────── */
+.listHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rowInline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.block {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.125rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--color-bg-page);
+}
+
+.blockHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blockLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Add / Delete buttons ───────────────────────────────────── */
+.addBtn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-brand-primary);
+  background: var(--color-brand-light);
+  border: 1px solid var(--color-brand-accent);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.addBtn:hover {
+  background: var(--color-brand-accent);
+  color: var(--color-brand-deep);
+}
+
+.delBtn {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg-card);
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.delBtn:hover {
+  background: var(--color-allergy-light);
+  border-color: var(--color-allergy);
+  color: var(--color-allergy);
+}
+
+/* ─── Toggle cards ───────────────────────────────────────────── */
+.toggleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.toggleCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.toggleCard:hover {
+  border-color: var(--color-brand-primary);
+  background: var(--color-brand-light);
+}
+
+.toggleOn {
+  border-color: var(--color-brand-primary);
+  background: var(--color-brand-light);
+}
+
+.toggleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.toggleTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.toggleSub {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.togglePill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.togglePillOn {
+  background: var(--color-brand-primary);
+  color: #fff;
+}
+
+/* ─── Navigation ─────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.btnPrev {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: none;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 1.25rem;
+  transition: all 0.15s;
+}
+
+.btnPrev:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.btnNext {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-brand-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 2rem;
+  transition: background 0.15s;
+  margin-left: auto;
+}
+
+.btnNext:hover { background: var(--color-brand-deep); }
+
+.btnSubmit {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-brand-deep);
+  background: var(--color-brand-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 2rem;
+  transition: background 0.15s;
+  margin-left: auto;
+}
+
+.btnSubmit:hover { background: #6aa8e2; }
+
+/* ─── Success screen ─────────────────────────────────────────── */
+.successWrap {
+  min-height: 100vh;
+  background: var(--color-bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.successCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-ok);
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successTitle {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+.successSub {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.successName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  background: var(--color-brand-light);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+}
+
+.successBtn {
+  display: inline-block;
+  background: var(--color-brand-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  margin-top: 0.5rem;
+  transition: background 0.15s;
+}
+
+.successBtn:hover { background: var(--color-brand-deep); }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .rowInline {
+    flex-wrap: wrap;
+  }
+
+  .selectSm {
+    width: 100%;
+  }
+
+  .successCard {
+    padding: 2.5rem 1.5rem;
+  }
+}

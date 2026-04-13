@@ -7,7 +7,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <Logo variant="light" />
+          <Logo variant="dark" />
         </div>
         <nav className={styles.links}>
           <a href="#" className={styles.link}>Privacidad</a>

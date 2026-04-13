@@ -9,7 +9,7 @@ const steps = [
   {
     num: '2',
     title: 'Recibe tu QR',
-    desc: 'Descarga tu QR o recibe tu tarjeta y llavero físico por correo, sin costo adicional.',
+    desc: 'Descarga tu QR o recibe tu tarjeta y llavero físico por correo, incluidos con tu anualidad.',
   },
   {
     num: '3',

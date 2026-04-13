@@ -10,7 +10,7 @@
 
 .head {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .title {
@@ -25,14 +25,140 @@
   color: var(--color-text-secondary);
 }
 
+/* ── Anualidad card ── */
+.annualCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--color-brand-deep);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2.75rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 16px 48px rgba(12, 68, 124, 0.3);
+}
+
+.annualLeft {
+  flex: 1;
+}
+
+.annualBadge {
+  display: inline-block;
+  background: var(--color-brand-accent);
+  color: var(--color-brand-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.annualName {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.annualDesc {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.annualFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.annualFeatures li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.check {
+  color: var(--color-brand-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.annualRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.annualPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.annualPrice {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.annualPeriod {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.annualCta {
+  display: block;
+  background: #fff;
+  color: var(--color-brand-deep);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.annualCta:hover {
+  background: var(--color-brand-accent);
+}
+
+/* ── Products section header ── */
+.productsHead {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.productsTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.productsSub {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* ── Product cards grid ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   align-items: start;
+  margin-bottom: 1.5rem;
 }
 
-/* Card */
 .card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -48,7 +174,7 @@
   background: var(--color-brand-deep);
   border-color: var(--color-brand-deep);
   color: #fff;
-  box-shadow: 0 16px 40px rgba(12, 68, 124, 0.35);
+  box-shadow: 0 16px 40px rgba(12, 68, 124, 0.3);
   transform: scale(1.03);
 }
 
@@ -81,7 +207,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .priceValue {
@@ -96,75 +222,83 @@
   opacity: 0.7;
 }
 
-.features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  margin-bottom: 1.75rem;
+.productDesc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
   flex: 1;
-}
-
-.feature {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
   color: inherit;
-  opacity: 0.9;
 }
 
-.check {
-  color: var(--color-ok);
-  font-weight: 700;
+.renewalRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.featured .renewalRow {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.renewalIcon {
+  font-size: 0.875rem;
+  opacity: 0.6;
   flex-shrink: 0;
-  margin-top: 0.05rem;
 }
 
-.featured .check {
-  color: var(--color-brand-accent);
+.renewalText {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  color: inherit;
 }
 
-.cta {
-  display: block;
+/* ── Footnote ── */
+.footnote {
   text-align: center;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: opacity 0.15s ease, background 0.15s ease;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
 }
 
-.ctaDefault {
-  background: var(--color-bg-page);
-  color: var(--color-brand-primary);
-  border: 1.5px solid var(--color-border);
-}
-
-.ctaDefault:hover {
-  background: var(--color-brand-light);
-  border-color: var(--color-brand-primary);
-}
-
-.ctaFeatured {
-  background: #fff;
-  color: var(--color-brand-deep);
-}
-
-.ctaFeatured:hover {
-  background: var(--color-brand-accent);
-}
-
+/* ── Responsive ── */
 @media (max-width: 900px) {
+  .annualCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.75rem;
+  }
+
+  .annualRight {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     max-width: 420px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
   }
 
   .featured {
     transform: none;
     order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .annualRight {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .annualCta {
+    width: 100%;
+    text-align: center;
   }
 }

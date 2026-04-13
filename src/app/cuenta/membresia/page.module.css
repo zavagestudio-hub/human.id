@@ -1,0 +1,43 @@
+.wrap { min-height: 100vh; background: var(--color-bg-page); }
+
+.header {
+  background: var(--color-bg-card); border-bottom: 1px solid var(--color-border);
+  padding: 1rem 2rem; display: flex; align-items: center; gap: 1.5rem;
+}
+.back { font-size: 0.875rem; font-weight: 600; color: var(--color-text-secondary); text-decoration: none; }
+.back:hover { color: var(--color-brand-primary); }
+.title { font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: var(--color-text-primary); }
+
+.main { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; display: flex; flex-direction: column; gap: 2.5rem; }
+
+.section {
+  background: var(--color-bg-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 2rem;
+}
+.sectionTitle { font-size: 1.1rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.375rem; }
+.sectionSub { font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 1.25rem; }
+
+.portalBtn {
+  background: var(--color-brand-primary); color: #fff; font-weight: 700;
+  font-size: 0.9rem; border: none; border-radius: var(--radius-sm);
+  padding: 0.7rem 1.75rem; cursor: pointer; transition: background 0.15s;
+}
+.portalBtn:hover:not(:disabled) { background: var(--color-brand-deep); }
+.portalBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.addOnGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.addOnCard {
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+  background: var(--color-bg-page);
+}
+.addOnName { font-size: 0.9rem; font-weight: 700; color: var(--color-text-primary); }
+.addOnPrice { font-size: 1.25rem; font-weight: 900; color: var(--color-brand-primary); }
+.addOnDesc { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.5; flex: 1; }
+.addOnBtn {
+  margin-top: 0.25rem; background: var(--color-brand-light); color: var(--color-brand-primary);
+  border: 1px solid var(--color-brand-accent); border-radius: 6px; font-weight: 700;
+  font-size: 0.8rem; padding: 0.5rem; cursor: pointer; transition: background 0.15s;
+}
+.addOnBtn:hover:not(:disabled) { background: var(--color-brand-accent); }
+.addOnBtn:disabled { opacity: 0.6; cursor: not-allowed; }

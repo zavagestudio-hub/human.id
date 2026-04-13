@@ -17,7 +17,7 @@ export function HeroSection() {
           </p>
           <div className={styles.ctas}>
             <Link href="/registro" className={styles.btnSolid}>
-              Crear mi perfil gratis
+              Crear mi Human ID
             </Link>
             <Link href="/perfil" className={styles.btnOutline}>
               Ver demo

@@ -4,7 +4,6 @@ import { AudienceSection } from '@/components/home/AudienceSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { ProfileSection } from '@/components/home/ProfileSection'
 import { PricingSection } from '@/components/home/PricingSection'
-import { RoadmapSection } from '@/components/home/RoadmapSection'
 import { CtaSection } from '@/components/home/CtaSection'
 import { Footer } from '@/components/home/Footer'
 
@@ -18,7 +17,6 @@ export default function Home() {
         <HowItWorks />
         <ProfileSection />
         <PricingSection />
-        <RoadmapSection />
         <CtaSection />
       </main>
       <Footer />

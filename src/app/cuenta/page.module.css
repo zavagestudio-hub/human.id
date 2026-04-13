@@ -1,0 +1,88 @@
+.wrap { min-height: 100vh; background: var(--color-bg-page); }
+
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.875rem 2rem; gap: 1rem;
+}
+
+.nav { display: flex; align-items: center; gap: 1.25rem; }
+.navLink { font-size: 0.875rem; font-weight: 600; color: var(--color-text-secondary); text-decoration: none; }
+.navLink:hover { color: var(--color-brand-primary); }
+.navLinkOut { font-size: 0.875rem; font-weight: 600; color: var(--color-allergy); text-decoration: none; }
+
+.main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+.hero { margin-bottom: 2rem; }
+.heroName { font-family: var(--font-title); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 900; color: var(--color-text-primary); }
+.heroSub { font-size: 0.95rem; color: var(--color-text-secondary); margin-top: 0.25rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+
+.cardBlood { background: var(--color-brand-deep); border-color: var(--color-brand-deep); color: #fff; }
+.cardBlood .cardLabel { color: rgba(255,255,255,0.7); }
+
+.cardLabel { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); }
+.cardValue { font-size: 1.1rem; font-weight: 700; color: var(--color-text-primary); }
+.cardNote { font-size: 0.8rem; color: var(--color-text-secondary); }
+.cardCta {
+  display: inline-block; font-size: 0.8rem; font-weight: 700;
+  color: var(--color-brand-primary); background: var(--color-brand-light);
+  padding: 0.35rem 0.875rem; border-radius: 6px; text-decoration: none; margin-top: 0.25rem;
+}
+.cardCta:hover { background: var(--color-brand-accent); }
+
+.bloodType { font-size: 2.5rem; font-weight: 900; color: #fff; line-height: 1; }
+
+.actions { display: flex; flex-direction: column; gap: 0.5rem; }
+.actionBtn {
+  font-size: 0.85rem; font-weight: 600; color: var(--color-text-primary);
+  background: var(--color-bg-page); border: 1px solid var(--color-border);
+  border-radius: 6px; padding: 0.5rem 0.75rem; text-decoration: none;
+  transition: border-color 0.15s;
+}
+.actionBtn:hover { border-color: var(--color-brand-primary); color: var(--color-brand-primary); }
+
+.summary {
+  background: var(--color-bg-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 1.75rem 2rem;
+}
+.summaryTitle { font-size: 1rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 1rem; }
+.summaryGrid { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 1.25rem; }
+.summaryItem {
+  font-size: 0.8rem; font-weight: 600; color: var(--color-brand-primary);
+  background: var(--color-brand-light); padding: 0.3rem 0.875rem;
+  border-radius: 100px; border: 1px solid var(--color-brand-accent);
+}
+.editLink { font-size: 0.875rem; font-weight: 600; color: var(--color-brand-primary); text-decoration: none; }
+.editLink:hover { text-decoration: underline; }
+
+.emptyState {
+  background: var(--color-bg-card); border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); padding: 3rem; text-align: center;
+}
+.emptyText { font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 1.25rem; }
+.emptyBtn {
+  display: inline-block; background: var(--color-brand-primary); color: #fff;
+  font-weight: 700; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .header { padding: 0.75rem 1rem; }
+  .main { padding: 1.5rem 1rem 3rem; }
+}

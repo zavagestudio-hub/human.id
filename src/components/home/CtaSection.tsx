@@ -8,7 +8,7 @@ export function CtaSection() {
         <h2 className={styles.headline}>Corre lejos. Vive con todo.</h2>
         <p className={styles.sub}>Que siempre sepan quién eres.</p>
         <Link href="/registro" className={styles.btn}>
-          Crear mi perfil ahora — es gratis
+          Crear mi Human ID
         </Link>
       </div>
     </section>
